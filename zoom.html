@@ -1,50 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>zoom img</title>
-	<style type="text/css">
-		.pic{
-			width: 800px;
-			overflow: hidden;
-			position: relative;
-		}
-		.zoom{
-			width: 100%;
-			height: 100%;
-			float: left;
-		}
-		.zoomin{
-			position: absolute;
-			top: 0;
-			left: 0;
-			overflow: hidden;
-			width: 203%;
-			height: 203%;
-		}
-	</style>
+    <title>zoom img</title>
+    <link rel="stylesheet" type="text/css" href="zoom.css">
 </head>
+
 <body>
-<div class="pic">
-	<img class="zoom" src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg">
-</div>
-
-
+    <div class="pic">
+        <img class="zoom" src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg">
+    </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="zoom.js"></script>
 
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('.pic').mouseenter(function(){
-			$('.pic').append('<img class="zoomin" src="'+$('.zoom').attr('src')+'">')
-		})
-		$('.pic').mouseleave(function(){
-			$('.zoomin').remove()
-		})
-		$('.pic').mousemove(function(e){
-			$('.zoomin').css('top',-e.pageY)
-			$('.zoomin').css('left',-e.pageX)
-		})
-	})
-</script>
 </html>
-
