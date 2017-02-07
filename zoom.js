@@ -1,12 +1,12 @@
 $(document).ready(function() {
     $('.pic').mouseenter(function() {
-        $('.pic').append('<img class="zoomin" src="' + $('.zoom').attr('src') + '">')
+        $(this).append('<img class="zoomin" src="' + $(this).find('.zoom').attr('src') + '">')
     })
     $('.pic').mouseleave(function() {
-        $('.zoomin').remove()
+        $(this).find('.zoomin').remove()
     })
     $('.pic').mousemove(function(e) {
-        $('.zoomin').css('top', -e.pageY)
-        $('.zoomin').css('left', -e.pageX)
+        $(this).find('.zoomin').css('top', -e.pageY)
+        $(this).find('.zoomin').css('left', -e.pageX)
     })
 })
